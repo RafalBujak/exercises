@@ -1,29 +1,28 @@
 package com.linkedlist;
 
 
-public class DoubleLinkedList {
+public class DoubleLinkedList  {
 
-    private Element head = null;
+    private Element head;
     private Element tail;
     private int count = 0;
 
 
-
-    private void setFirst(Element element) {
+    private void setFirst(String element) {
 
         Element first = head;
-        Element last = new Element(null, element, first.toString());
-        head = last;
+        Element newElement = new Element(first, null, element);
+        head = newElement;
         if (first == null)
-            tail = last;
+            tail = newElement;
         else
-            first.setPrevious(last);
+            first.setPrevious(newElement);
         count++;
     }
 
-    private void setLast(Element element) {
+    private void setLast(String element) {
         Element last = tail;
-        Element newElement = new Element(last, element, null);
+        Element newElement = new Element(null, last,  element);
         last = newElement;
         if (last == null)
             head = newElement;
@@ -32,8 +31,13 @@ public class DoubleLinkedList {
         count++;
     }
 
-    public void addFirst(Element element) {setFirst(element);}
+    public void addFirst(String element) {
 
-    public void addLast(Element element) {setLast(element);}
+        setFirst(element);}
 
+    public void addLast(String element) {setLast(element);}
+
+    public void showSize() {
+        System.out.println(count);
+    }
 }

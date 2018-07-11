@@ -11,6 +11,7 @@ public class Element {
         this.value = value;
     }
 
+
     public void setNext(Element next) {
         this.next = next;
     }
