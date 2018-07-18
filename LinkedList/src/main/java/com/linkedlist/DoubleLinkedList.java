@@ -4,40 +4,48 @@ package com.linkedlist;
 public class DoubleLinkedList  {
 
     private Element head;
-    private Element tail;
-    private int count = 0;
+    //private Element tail;
+    private int size = 0;
 
+    public void add(String value) {
 
-    private void setFirst(String element) {
-
-        Element first = head;
-        Element newElement = new Element(first, null, element);
-        head = newElement;
-        if (first == null)
-            tail = newElement;
-        else
-            first.setPrevious(newElement);
-        count++;
+        if(head == null) {
+            head = new Element(value);
+        } else {
+            Element element = head;
+            while (element.getNext() != null) {
+                element = element.getNext();
+            }
+            Element newElement = new Element(value);
+            element.setNext(newElement);
+            newElement.setPrevious(element);
+        }
+        size++;
     }
 
-    private void setLast(String element) {
-        Element last = tail;
-        Element newElement = new Element(null, last,  element);
-        last = newElement;
-        if (last == null)
-            head = newElement;
-        else
-            last.setNext(newElement);
-        count++;
+    public void delete(String element) {
+        //TODO
+        // 2 wersja za pomoca int
     }
 
-    public void addFirst(String element) {
-
-        setFirst(element);}
-
-    public void addLast(String element) {setLast(element);}
-
-    public void showSize() {
-        System.out.println(count);
+    public String get(int index) {
+        int x = 0;
+        Element element = head;
+        if (index > size) {
+            throw new IndexOutOfBoundsException();
+        }
+        while(x < index) {
+            element = element.getNext();
+            x++;
+        }
+        return element.getValue();
     }
+
+    public boolean contains(String element) {
+        // return information if some element exist in the list
+        return true;
+    }
+
+
+    // napisz testy
 }

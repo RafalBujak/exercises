@@ -11,6 +11,13 @@ public class Element {
         this.value = value;
     }
 
+    public Element(String value) {
+        this.value = value;
+    }
+
+    public Element getNext() {
+        return next;
+    }
 
     public void setNext(Element next) {
         this.next = next;
@@ -22,5 +29,9 @@ public class Element {
 
     public void setValue(String value) {
         this.value = value;
+    }
+
+    public String getValue() {
+        return value;
     }
 }
