@@ -1,7 +1,7 @@
 /out/
 .gradle
 /build/
-.idea
+.idea/
 !gradle/wrapper/gradle-wrapper.jar
 
 ### STS ###

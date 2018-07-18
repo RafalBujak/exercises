@@ -1,10 +1,11 @@
 package com.linkedlist;
 
 
+
+
 public class DoubleLinkedList {
 
     private Element head;
-    //private Element tail;
     private int size = 0;
 
     public void add(String value) {
@@ -26,13 +27,36 @@ public class DoubleLinkedList {
     public void delete(String element) {
         //TODO
         // 2 wersja za pomoca int
-        //Element element1 = head;
-        while (head.getNext() != null) {
-            if (head.getValue().equals(element)) {
-                delete(element);
+
+        if (head != null) {
+            Element element1 = head;
+            while (element1.getNext() != null) {
+                element1 = element1.getNext();
+                if (element1.getValue().equals(element)) {
+
+                }
             }
+            System.out.println(element1.getValue());
+
         }
         size--;
+    }
+
+
+    public void deleteByIndex(int index) {
+        int x = 0;
+        Element element = head;
+        if (index > size) {
+            throw new IndexOutOfBoundsException();
+        }
+        while (x < index) {
+            element = element.getNext();
+            if (x == index) {
+                delete(element.getValue());
+            }
+            x++;
+        }
+
     }
 
     public String get(int index) {
@@ -49,12 +73,24 @@ public class DoubleLinkedList {
     }
 
     public boolean contains(String element) {
-        // return information if some element exist in the list
-        return true;
+        Element element1 = head;
+
+        if (element1.getValue().equals(element)) {
+            return true;
+        } else {
+            while (element1.getNext() != null) {
+                element1 = element1.getNext();
+                if (element1.getValue().equals(element)) {
+                    return true;
+                }
+
+            }
+            return false;
+        }
     }
-    // napisz testy
 
     public int getSize() {
         return size;
     }
+
 }
