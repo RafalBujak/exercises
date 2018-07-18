@@ -1,7 +1,7 @@
 package com.linkedlist;
 
 
-public class DoubleLinkedList  {
+public class DoubleLinkedList {
 
     private Element head;
     //private Element tail;
@@ -9,7 +9,7 @@ public class DoubleLinkedList  {
 
     public void add(String value) {
 
-        if(head == null) {
+        if (head == null) {
             head = new Element(value);
         } else {
             Element element = head;
@@ -34,7 +34,7 @@ public class DoubleLinkedList  {
         if (index > size) {
             throw new IndexOutOfBoundsException();
         }
-        while(x < index) {
+        while (x < index) {
             element = element.getNext();
             x++;
         }
@@ -45,7 +45,5 @@ public class DoubleLinkedList  {
         // return information if some element exist in the list
         return true;
     }
-
-
     // napisz testy
 }
