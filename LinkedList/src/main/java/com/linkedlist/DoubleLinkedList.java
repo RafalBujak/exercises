@@ -26,6 +26,13 @@ public class DoubleLinkedList {
     public void delete(String element) {
         //TODO
         // 2 wersja za pomoca int
+        //Element element1 = head;
+        while (head.getNext() != null) {
+            if (head.getValue().equals(element)) {
+                delete(element);
+            }
+        }
+        size--;
     }
 
     public String get(int index) {
@@ -46,4 +53,8 @@ public class DoubleLinkedList {
         return true;
     }
     // napisz testy
+
+    public int getSize() {
+        return size;
+    }
 }
