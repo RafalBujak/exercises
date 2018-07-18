@@ -26,7 +26,7 @@ public class DoubleLinkedList {
 
     public void delete(String element) {
         //TODO
-        // 2 wersja za pomoca int
+        // Fix problem with deleting elements in two methods by object String and index
 
         if (head != null) {
             Element element1 = head;
