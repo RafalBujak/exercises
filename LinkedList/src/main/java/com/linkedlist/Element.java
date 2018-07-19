@@ -34,4 +34,8 @@ public class Element {
     public String getValue() {
         return value;
     }
+
+    public Element getPrevious() {
+        return previous;
+    }
 }

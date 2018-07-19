@@ -24,22 +24,22 @@ public class DoubleLinkedList {
         size++;
     }
 
-    public void delete(String element) {
-        //TODO
-        // Fix problem with deleting elements in two methods by object String and index
+    public void delete(String value) {
+
 
         if (head != null) {
-            Element element1 = head;
-            while (element1.getNext() != null) {
-                element1 = element1.getNext();
-                if (element1.getValue().equals(element)) {
-
+            Element element = head;
+            while (element != null) {
+                element = element.getNext();
+                if (element.getValue().equals(value)) {
+                    element.getPrevious().setNext(element.getNext());
+                    element.getNext().setPrevious(element.getPrevious());
+                    size--;
+                    return;
                 }
             }
-            System.out.println(element1.getValue());
-
         }
-        size--;
+
     }
 
 
